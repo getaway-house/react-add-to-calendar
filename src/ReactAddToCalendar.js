@@ -38,7 +38,8 @@ export default class ReactAddToCalendar extends React.Component {
     this.setState({ isCrappyIE: isCrappyIE });
   }
 
-  toggleCalendarDropdown() {
+  toggleCalendarDropdown(e) {
+    e.preventDefault()
     let showOptions = !this.state.optionsOpen;
 
     if (showOptions) {
@@ -80,7 +81,7 @@ export default class ReactAddToCalendar extends React.Component {
       window.open(url, "_blank");
     }
 
-    this.toggleCalendarDropdown();
+    this.toggleCalendarDropdown({ preventDefault: () => {} });
   }
 
   renderDropdown() {

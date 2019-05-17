@@ -40,30 +40,7 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ((function(modules) {
-	// Check all modules for deduplicated modules
-	for(var i in modules) {
-		if(Object.prototype.hasOwnProperty.call(modules, i)) {
-			switch(typeof modules[i]) {
-			case "function": break;
-			case "object":
-				// Module can be created from a template
-				modules[i] = (function(_m) {
-					var args = _m.slice(1), fn = modules[_m[0]];
-					return function (a,b,c) {
-						fn.apply(this, [a,b,c].concat(args));
-					};
-				}(modules[i]));
-				break;
-			default:
-				// Module is a copy of another module
-				modules[i] = modules[modules[i]];
-				break;
-			}
-		}
-	}
-	return modules;
-}([
+/******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1154,9 +1131,9 @@
 
 	var _code_example_component2 = _interopRequireDefault(_code_example_component);
 
-	__webpack_require__(329);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-add-to-calendar/dist/react-add-to-calendar.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-	__webpack_require__(330);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./style.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18347,7 +18324,8 @@
 	    }
 	  }, {
 	    key: "toggleCalendarDropdown",
-	    value: function toggleCalendarDropdown() {
+	    value: function toggleCalendarDropdown(e) {
+	      e.preventDefault();
 	      var showOptions = !this.state.optionsOpen;
 
 	      if (showOptions) {
@@ -18387,7 +18365,7 @@
 	        window.open(url, "_blank");
 	      }
 
-	      this.toggleCalendarDropdown();
+	      this.toggleCalendarDropdown({ preventDefault: function preventDefault() {} });
 	    }
 	  }, {
 	    key: "renderDropdown",
@@ -35462,14 +35440,8 @@
 	};
 
 /***/ }),
-/* 329 */
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 330 */
-329,
+/* 329 */,
+/* 330 */,
 /* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35522,4 +35494,4 @@
 	HeroExample.displayName = "HeroExample";
 
 /***/ })
-/******/ ])));
+/******/ ]);
